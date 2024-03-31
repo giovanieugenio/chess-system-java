@@ -29,7 +29,11 @@ public class Board {
     }
     public Piece piece(Position position){
         return piece[position.getRow()][position.getCollum()];
+    }
 
+    public void placePiece(Piece pieces, Position position){
+        piece[position.getRow()][position.getCollum()] = pieces;
+        pieces.position = position;
     }
 
 }
