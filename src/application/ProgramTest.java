@@ -9,7 +9,5 @@ public class ProgramTest {
 
         UI.printBoard(chessMatch.getPiece());
 
-        System.out.println();
-
     }
 }
