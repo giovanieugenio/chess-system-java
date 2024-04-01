@@ -18,13 +18,23 @@ public class ProgramTest {
         while (true){//TEST
             try {
                 UI.clearScreen();
+
                 UI.printBoard(chessMatch.getPiece());
+
                 System.out.print("Source: ");
                 ChessPosition source = UI.readChessPosition(sc);
                 System.out.println();
+
                 System.out.print("Target: ");
                 ChessPosition target = UI.readChessPosition(sc);
+
+                boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+
+                UI.clearScreen();
+                UI.printBoard(chessMatch.getPiece(), possibleMoves);
+
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+
             } catch (ChessException e ){
                 System.out.println(e.getMessage());
                 sc.nextLine();
